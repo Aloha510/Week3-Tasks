@@ -1,21 +1,14 @@
 #include<stdio.h>
+int sum(int n)
+{
+    if (n == 1 || n == 2)
+        return 1;
+    else return sum(n - 1) + sum(n - 2);
+}
 int main()
 {
-    int n=2, sum = 1, month, a = 1, b = 1;
+    int month;
     scanf("%d", &month);
-    if (month == 1)
-        printf("1");
-    else if (month == 2)
-        printf("1");
-    else {
-        while (n < month)
-        {
-            n++;
-            a = b;
-            b = sum;
-            sum += a;
-        }
-        printf("%d", sum);
-    }
+    printf("%d", sum(month));
     return 0;
 }
